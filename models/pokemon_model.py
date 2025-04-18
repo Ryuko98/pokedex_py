@@ -1,4 +1,4 @@
-from models.pokeapi import get_pokemon, get_type_name, get_ability_name
+from models.pokeapi import get_pokemon, get_type_name, get_ability_name, get_region
 
 def get_pokemon_data(name):
     data = get_pokemon(name)
@@ -13,4 +13,14 @@ def get_pokemon_data(name):
         'sprites': data['sprites']['front_default'],
         'types': [get_type_name(t['type']['name']) for t in data['types']],
         'abilities': [get_ability_name(a['ability']['name']) for a in data['abilities']]
+    }
+
+def get_region_data(name):
+    data = get_region(name)
+    if not data:
+        return None
+
+    return {
+        'name': data['name'].capitalize(),
+        'id': data['id']
     }
