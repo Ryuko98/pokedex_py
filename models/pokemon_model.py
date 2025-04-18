@@ -8,8 +8,8 @@ def get_pokemon_data(name):
     return {
         'name': data['name'].capitalize(),
         'id': data['id'],
-        'height': data['height'],
-        'weight': data['weight'],
+        'height': data['height'] / 10,
+        'weight': data['weight'] / 10,
         'sprites': data['sprites']['front_default'],
         'types': [get_type_name(t['type']['name']) for t in data['types']],
         'abilities': [get_ability_name(a['ability']['name']) for a in data['abilities']]
