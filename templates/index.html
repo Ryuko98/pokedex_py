@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokédex</title>
-</head>
-<body>
-    <h1>Bienvenido a la Pokédex</h1>
-    <p>Estás buscando información sobre: <strong>{{ pokemon_name }}</strong></p>
-</body>
-</html>
+<form method="post">
+    <input type="text" name="pokemon_name" placeholder="Nombre del Pokémon">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% if pokemon %}
+    <h2>{{ pokemon.name }} (ID: {{ pokemon.id }})</h2>
+    <img src="{{ pokemon.sprites }}" alt="{{ pokemon.name }}">
+    <p><strong>Altura:</strong> {{ pokemon.height }}</p>
+    <p><strong>Peso:</strong> {{ pokemon.weight }}</p>
+    <p><strong>Tipos:</strong> {{ pokemon.types | join(', ') }}</p>
+{% endif %}
