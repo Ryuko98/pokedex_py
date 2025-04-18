@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from controllers.pokemon_controller import buscar_pokemon
+from controllers.pokemon_controller import find_pokemon
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def index():
 
     if request.method == 'POST':
         nombre = request.form.get('pokemon_name')
-        pokemon, error = buscar_pokemon(nombre)
+        pokemon, error = find_pokemon(nombre)
 
     return render_template('index.html', pokemon=pokemon, error=error)
 

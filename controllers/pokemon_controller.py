@@ -1,11 +1,11 @@
-from models.pokemon_model import obtener_datos
+from models.pokemon_model import get_pokemon_data
 
-def buscar_pokemon(nombre):
-    if not nombre:
-        return None, "Debes ingresar un nombre de Pokémon."
+def find_pokemon(name):
+    if not name:
+        return None, "Debes ingresar un nombre o índice de Pokémon."
 
-    pokemon = obtener_datos(nombre)
+    pokemon = get_pokemon_data(name)
     if pokemon:
         return pokemon, None
     else:
-        return None, f"No se encontró el Pokémon: '{nombre}'."
+        return None, f"No se encontró el Pokémon: '{name}'."
