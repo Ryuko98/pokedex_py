@@ -1,7 +1,6 @@
 import requests
 type_cache = {}
 ability_cache = {}
-region_cache = {}
 
 def get_pokemon(name):
     try:
