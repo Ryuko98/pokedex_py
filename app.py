@@ -7,6 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template("index.html", active_page="home")
 
+@app.route("/dev")
+def dev():
+    return render_template("dev.html") 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     pokemon = None

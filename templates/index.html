@@ -33,6 +33,7 @@
             <p><strong>Generación:</strong> {{ region.generation }}</p>
             <p><strong>Pokédexes:</strong> {{ region.pokedexes | join(', ') }}</p>
         {% endif %}
+        <button><a href="{{ url_for('dev') }}">yo</a></button>
     </main>
     <footer></footer>
 </body>
