@@ -3,6 +3,10 @@ from controllers.pokemon_controller import find_pokemon, find_region
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return render_template("index.html", active_page="home")
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     pokemon = None

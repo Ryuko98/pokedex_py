@@ -17,6 +17,9 @@
             <input type="text" name="query" placeholder="Buscar...">
             <button type="submit">Buscar</button>
         </form>
+        {% if error %}
+            <h2>Error</h2>
+        {% endif %}
         {% if pokemon %}
             <h2>{{ pokemon.name }} (ID: {{ pokemon.id }})</h2>
             <img src="{{ pokemon.sprites }}" alt="{{ pokemon.name }}">
