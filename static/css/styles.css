@@ -1,0 +1,32 @@
+html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    /* background: -webkit-linear-gradient(135deg, #0000b0,#000080,#000050,#000020);
+    background: linear-gradient(135deg, #0000b0,#000080,#000050,#000020); */
+    background: url('../imgs/forest.jpg') fixed center/cover no-repeat;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Pokémon Font', sans-serif;
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100%; */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Ajusta el alpha para oscurecer */
+    z-index: -1;
+}
+
+main {
+    margin: 10px;
+}
